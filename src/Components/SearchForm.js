@@ -5,13 +5,13 @@ import SearchIcon from '@mui/icons-material/Search';
 const SearchForm = () => {
   return (
     <TextField
-      sx={{ width: 400, backgroundColor: "#fff" }}
+      sx={{ width: "100%", backgroundColor: "#fff", borderRadius: "10px" }}
       id="outlined-basic"
       placeholder="Enter Ingredients..."
       variant="outlined"
       InputProps={{
-        startAdornment: (
-          <InputAdornment position="start">
+        endAdornment: (
+          <InputAdornment position="end">
             <SearchIcon />
           </InputAdornment>
         ),
