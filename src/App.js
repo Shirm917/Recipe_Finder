@@ -1,10 +1,10 @@
-import SearchForm from "./Components/SearchForm";
+import Navbar from "./nav/Navbar";
 import "./App.css";
 
 function App() {
   return (
     <main className="container">
-      <SearchForm />
+      <Navbar />
     </main>
   );
 }

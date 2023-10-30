@@ -1,9 +1,14 @@
-import TextField from '@mui/material/TextField';
+import TextField from "@mui/material/TextField";
 
 const SearchForm = () => {
-    return (
-        <TextField sx={{marginTop: 5, width: 400}} id="outlined-basic" label="Enter Ingredients" variant="outlined" />
-     );
-}
+  return (
+    <TextField
+      sx={{ width: 400, backgroundColor: "#fff" }}
+      id="outlined-basic"
+      placeholder="Enter Ingredients..."
+      variant="outlined"
+    />
+  );
+};
 
 export default SearchForm;

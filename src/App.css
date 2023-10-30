@@ -4,3 +4,9 @@
     align-items: center;
     height: 100vh;
 }
+
+.link {
+    text-decoration: none;
+    color: #eaa0a2;
+    font-size: 20px;
+}
