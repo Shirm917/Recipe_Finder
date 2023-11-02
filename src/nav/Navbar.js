@@ -7,16 +7,22 @@ import SearchForm from "../components/SearchForm";
 
 const Navbar = () => {
   return (
-    <Box sx={{ flexGrow: 1, width: "100%" }}>
-      <AppBar sx={{ backgroundColor: "#3a4664", height: "15%", display: "flex", justifyContent: "center" }} position="static">
-        <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
-          <Link className="link" to="/">
-            Recipe Finder
-          </Link>
-          <SearchForm />
-        </Toolbar>
-      </AppBar>
-    </Box>
+    <AppBar
+      sx={{
+        backgroundColor: "#3a4664",
+        height: "15%",
+        display: "flex",
+        justifyContent: "center",
+      }}
+      position="static"
+    >
+      <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
+        <Link className="link" to="/">
+          Recipe Finder
+        </Link>
+        <SearchForm />
+      </Toolbar>
+    </AppBar>
   );
 };
 
