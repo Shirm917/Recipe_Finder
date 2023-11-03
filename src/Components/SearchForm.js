@@ -17,7 +17,7 @@ const SearchForm = () => {
       <TextField
         sx={{ width: "100%", backgroundColor: "#fff", borderRadius: "10px" }}
         id="outlined-basic"
-        placeholder="Enter Ingredients..."
+        placeholder="Enter Ingredients"
         variant="outlined"
         onChange={(event) => dispatch(setSearchText(event.target.value))}
         InputProps={{
