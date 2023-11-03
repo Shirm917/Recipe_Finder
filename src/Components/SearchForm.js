@@ -1,5 +1,7 @@
-import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { setSearchText } from "../redux/slices/recipeSlice";
+import { fetchRecipes } from "../redux/thunks/fetchRecipes";
 import TextField from "@mui/material/TextField";
 import InputAdornment from "@mui/material/InputAdornment";
 import SearchIcon from "@mui/icons-material/Search";
@@ -7,10 +9,17 @@ import IconButton from "@mui/material/IconButton";
 
 const SearchForm = () => {
   const dispatch = useDispatch();
+  const searchText = useSelector((state) => state.recipe.searchText);
+  const recipes = useSelector((state) => state.recipe.recipes);
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    dispatch(fetchRecipes(searchText));
   };
+
+  useEffect(() => {
+    console.log(recipes);
+  }, [recipes]);
 
   return (
     <form className="search-form" onSubmit={handleSubmit}>
