@@ -5,22 +5,26 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 
-const RecipeCard = ({recipe}) => {
-    console.log(recipe);
-    const {image,label,calories} = recipe
+const RecipeCard = ({ recipe }) => {
+  const { image, label } = recipe;
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card
+      sx={{
+        maxWidth: 345,
+        margin: 1,
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
+      }}
+    >
       <CardMedia
-        sx={{ height: 140 }}
+        sx={{ height: 240, width: "100%" }}
         image={image}
         title={label}
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
           {label}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          Calories: {calories.toFixed(2)}
         </Typography>
       </CardContent>
       <CardActions>
