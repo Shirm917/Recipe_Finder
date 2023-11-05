@@ -3,6 +3,7 @@
   flex-direction: column;
   align-items: center;
   height: 100vh;
+  background-image: url(./images/cupcakes-2887270_1280.jpg);
 }
 
 .link {
@@ -13,12 +14,35 @@
 
 .recipe-container {
   width: 100%;
-  background-image: url(./images/cupcakes-2887270_1280.jpg);
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   grid-gap: 10px;
 }
 
 .search-form {
-    width: 100%;
+  width: 100%;
+}
+
+@media only screen and (min-width: 600px) {
+  .recipe-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .recipe-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .recipe-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .recipe-container {
+    grid-template-columns: repeat(5, 1fr);
+  }
 }
