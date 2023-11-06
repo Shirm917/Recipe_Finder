@@ -15,7 +15,7 @@ const RecipeCard = ({ recipe }) => {
   const handleRecipeClick = () => {
     dispatch(setChosenRecipe(recipe));
   };
-  console.log(recipe);
+
   return (
     <Card
       sx={{
