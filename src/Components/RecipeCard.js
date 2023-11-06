@@ -31,7 +31,7 @@ const RecipeCard = ({ recipe }) => {
         title={label}
       />
       <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
+        <Typography sx={{textTransform: "capitalize"}} gutterBottom variant="h5" component="div">
           {label}
         </Typography>
       </CardContent>

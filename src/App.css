@@ -4,6 +4,7 @@
   align-items: center;
   height: 100vh;
   background-image: url(./images/cupcakes-2887270_1280.jpg);
+  overflow-y: auto;
 }
 
 .link {
@@ -23,8 +24,17 @@
   width: 100%;
 }
 
+.recipe-details-container {
+  height: 85%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .recipe-details {
   height: 80%;
+  width: 70%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -32,13 +42,12 @@
   background-color: #eaa0a2;
   border-radius: 10px;
   padding: 10px;
-  margin: 10px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 }
 
 .recipe-details img {
   height: 40%;
-  width: 50%;
+  width: 45%;
 }
 
 .cuisine-type {
