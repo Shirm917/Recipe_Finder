@@ -4,8 +4,9 @@ import { fetchRecipes } from "../thunks/fetchRecipes";
 const initialState = {
   searchText: "",
   recipes: [],
+  chosenRecipe: null,
   isLoading: false,
-  error: null
+  error: null,
 };
 
 export const recipeSlice = createSlice({
@@ -14,6 +15,9 @@ export const recipeSlice = createSlice({
   reducers: {
     setSearchText: (state, action) => {
       state.searchText = action.payload;
+    },
+    setChosenRecipe: (state, action) => {
+      state.chosenRecipe = action.payload;
     },
   },
   extraReducers: {
@@ -31,6 +35,6 @@ export const recipeSlice = createSlice({
   },
 });
 
-export const { setSearchText } = recipeSlice.actions;
+export const { setSearchText,setChosenRecipe } = recipeSlice.actions;
 
 export default recipeSlice.reducer;

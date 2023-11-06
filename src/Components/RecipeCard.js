@@ -1,3 +1,5 @@
+import { useDispatch } from "react-redux";
+import { setChosenRecipe } from "../redux/slices/recipeSlice";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
@@ -7,6 +9,11 @@ import Typography from "@mui/material/Typography";
 
 const RecipeCard = ({ recipe }) => {
   const { image, label } = recipe;
+  const dispatch = useDispatch();
+
+  const handleRecipeClick = () => {
+    dispatch(setChosenRecipe(recipe));
+  };
   return (
     <Card
       sx={{
@@ -27,7 +34,9 @@ const RecipeCard = ({ recipe }) => {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Click to see recipe</Button>
+        <Button size="small" onClick={handleRecipeClick}>
+          Click to see recipe
+        </Button>
       </CardActions>
     </Card>
   );
