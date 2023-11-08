@@ -58,6 +58,15 @@
   overflow: scroll;
 }
 
+.loading-screen {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 @media only screen and (min-width: 600px) {
   .recipe-container {
     grid-template-columns: repeat(2, 1fr);
