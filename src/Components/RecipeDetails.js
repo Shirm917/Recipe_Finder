@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux";
+import BackArrow from "./BackArrow";
 
 const RecipeDetails = () => {
   const chosenRecipe = useSelector((state) => state.recipe.chosenRecipe);
@@ -6,6 +7,7 @@ const RecipeDetails = () => {
 
   return (
     <section className="recipe-details-container">
+      <BackArrow />
       <div className="recipe-details">
         <h1>{label}</h1>
         <img src={image} alt={label} />
