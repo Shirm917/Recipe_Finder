@@ -1,35 +1,33 @@
 import { useSelector } from "react-redux";
 import RecipeCard from "./RecipeCard";
-import CircularProgress from "@mui/material/CircularProgress";
+import LoadingScreen from "./LoadingScreen";
+import ErrorScreen from "./ErrorScreen";
+import EmptyRecipesScreen from "./EmptyRecipesScreen";
 
 const RecipeContainer = () => {
-  const recipes = useSelector((state) => state.recipe.recipes);
-  const isLoading = useSelector((state) => state.recipe.isLoading);
-  const isError = useSelector((state) => state.recipe.error);
+  const { recipes, isLoading, isError } = useSelector((state) => state.recipe);
 
-  return isLoading ? (
-    <section className="loading-screen">
-      <h1>Loading</h1>
-      <CircularProgress color="inherit" />
-    </section>
-  ) : isError ? (
-    <section className="error-screen">
-      <h1>{isError}</h1>
-    </section>
-  ) : !recipes ? (
+  if (isLoading) {
+    return <LoadingScreen />;
+  }
+
+  if (isError) {
+    return <ErrorScreen error={isError} />;
+  }
+
+  if (recipes && recipes.length === 0) {
+    return <EmptyRecipesScreen />;
+  }
+
+  return !recipes ? (
     <section className="empty-recipes-screen">
       <h1>Search for ingredients or recipe names</h1>
     </section>
-  ) : recipes.length === 0 ? (
-    <section className="empty-recipes-screen">
-      <h1>No recipes found</h1>
-    </section>
   ) : (
     <section className="recipe-container">
-      {recipes &&
-        recipes.map((recipe) => {
-          return <RecipeCard key={recipe.recipe.uri} recipe={recipe.recipe} />;
-        })}
+      {recipes.map((recipe) => {
+        return <RecipeCard key={recipe.recipe.uri} recipe={recipe.recipe} />;
+      })}
     </section>
   );
 };
