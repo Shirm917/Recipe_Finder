@@ -60,7 +60,8 @@
 }
 
 .loading-screen,
-.error-screen {
+.error-screen,
+.empty-recipes-screen {
   height: 100vh;
   width: 100%;
   display: flex;

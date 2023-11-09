@@ -6,6 +6,7 @@ const RecipeContainer = () => {
   const recipes = useSelector((state) => state.recipe.recipes);
   const isLoading = useSelector((state) => state.recipe.isLoading);
   const isError = useSelector((state) => state.recipe.error);
+
   return isLoading ? (
     <section className="loading-screen">
       <h1>Loading</h1>
@@ -14,6 +15,14 @@ const RecipeContainer = () => {
   ) : isError ? (
     <section className="error-screen">
       <h1>{isError}</h1>
+    </section>
+  ) : !recipes ? (
+    <section className="empty-recipes-screen">
+      <h1>Search for ingredients or recipe names</h1>
+    </section>
+  ) : recipes.length === 0 ? (
+    <section className="empty-recipes-screen">
+      <h1>No recipes found</h1>
     </section>
   ) : (
     <section className="recipe-container">
