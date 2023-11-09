@@ -3,7 +3,7 @@ import { fetchRecipes } from "../thunks/fetchRecipes";
 
 const initialState = {
   searchText: "",
-  recipes: [],
+  recipes: null,
   chosenRecipe: null,
   isLoading: false,
   error: null,
