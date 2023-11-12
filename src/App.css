@@ -70,6 +70,10 @@
   justify-content: center;
 }
 
+.empty-recipes-screen h1 {
+  font-size: 5vw;
+}
+
 @media only screen and (min-width: 600px) {
   .recipe-container {
     grid-template-columns: repeat(2, 1fr);
