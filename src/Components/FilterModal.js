@@ -5,7 +5,6 @@ import { fetchRecipes } from "../redux/thunks/fetchRecipes";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import Button from "@mui/material/Button";
-import TextField from "@mui/material/TextField";
 import SelectInput from "./SelectInput";
 
 const FilterModal = () => {
@@ -79,22 +78,6 @@ const FilterModal = () => {
                 "low-fat",
                 "low-sodium",
               ]}
-            />
-            <TextField
-              sx={{
-                width: 120,
-                backgroundColor: "#fff",
-                borderRadius: "10px",
-                marginTop: 1,
-              }}
-              id="outlined-basic"
-              label="Calories"
-              variant="outlined"
-              autoComplete="off"
-              type="number"
-              onChange={(event) =>
-                handleFilterChange("calories", event.target.value)
-              }
             />
             <SelectInput
               value={filterOptions.mealType}

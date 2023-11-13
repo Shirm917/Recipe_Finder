@@ -11,7 +11,6 @@ const initialState = {
     diet: null,
     mealType: null,
     dishType: null,
-    calories: null
   }
 };
 
