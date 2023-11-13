@@ -11,7 +11,7 @@ const RecipeDetails = () => {
       <div className="recipe-details">
         <h1>{label}</h1>
         <img src={image} alt={label} />
-        <p>Calories: {calories.toFixed(2)}</p>
+        <p>Calories: {calories.toFixed()}</p>
         <p className="cuisine-type">Cuisine Type: {cuisineType || "Unknown"}</p>
         <div className="ingredient-lines-container">
           <ul>
