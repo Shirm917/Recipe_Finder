@@ -7,6 +7,12 @@ const initialState = {
   chosenRecipe: null,
   isLoading: false,
   error: null,
+  filterOptions: {
+    diet: null,
+    mealType: null,
+    dishType: null,
+    calories: null
+  }
 };
 
 export const recipeSlice = createSlice({
@@ -19,6 +25,9 @@ export const recipeSlice = createSlice({
     setChosenRecipe: (state, action) => {
       state.chosenRecipe = action.payload;
     },
+    setFilterOptions: (state, action) => {
+      state.filterOptions = action.payload;
+    }
   },
   extraReducers: {
     [fetchRecipes.pending]: (state) => {
@@ -35,6 +44,6 @@ export const recipeSlice = createSlice({
   },
 });
 
-export const { setSearchText,setChosenRecipe } = recipeSlice.actions;
+export const { setSearchText,setChosenRecipe,setFilterOptions } = recipeSlice.actions;
 
 export default recipeSlice.reducer;
