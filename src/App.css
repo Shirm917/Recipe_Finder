@@ -56,7 +56,16 @@
 }
 
 .ingredient-lines-container {
-  overflow: scroll;
+  overflow: auto;
+}
+
+.ingredient-lines-container::-webkit-scrollbar {
+  background: #eaa0a2;
+}
+
+.ingredient-lines-container::-webkit-scrollbar-thumb {
+  background: #d66f6f;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 }
 
 .loading-screen,
