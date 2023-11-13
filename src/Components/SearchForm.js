@@ -11,10 +11,11 @@ const SearchForm = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const searchText = useSelector((state) => state.recipe.searchText);
+  const filterOptions = useSelector((state) => state.recipe.filterOptions);
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    dispatch(fetchRecipes(searchText));
+    dispatch(fetchRecipes({searchText, filterOptions}));
     navigate("/");
   };
 
