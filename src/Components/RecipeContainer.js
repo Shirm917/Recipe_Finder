@@ -3,6 +3,7 @@ import RecipeCard from "./RecipeCard";
 import LoadingScreen from "./LoadingScreen";
 import ErrorScreen from "./ErrorScreen";
 import EmptyRecipesScreen from "./EmptyRecipesScreen";
+import FilterModal from "./FilterModal";
 
 const RecipeContainer = () => {
   const { recipes, isLoading, isError } = useSelector((state) => state.recipe);
@@ -24,11 +25,14 @@ const RecipeContainer = () => {
       <h1>Search for ingredients or recipe names</h1>
     </section>
   ) : (
-    <section className="recipe-container">
-      {recipes.map((recipe) => {
-        return <RecipeCard key={recipe.recipe.uri} recipe={recipe.recipe} />;
-      })}
-    </section>
+    <>
+      <FilterModal />
+      <section className="recipe-container">
+        {recipes.map((recipe) => {
+          return <RecipeCard key={recipe.recipe.uri} recipe={recipe.recipe} />;
+        })}
+      </section>
+    </>
   );
 };
 
