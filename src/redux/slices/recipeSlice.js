@@ -11,7 +11,12 @@ const initialState = {
     diet: null,
     mealType: null,
     dishType: null,
-  }
+  },
+  pagination: {
+    currentPage: 1,
+    itemsPerPage: 20,
+  },
+  currentRecipes: []
 };
 
 export const recipeSlice = createSlice({
@@ -26,7 +31,13 @@ export const recipeSlice = createSlice({
     },
     setFilterOptions: (state, action) => {
       state.filterOptions = action.payload;
-    }
+    },
+    setCurrentPage: (state, action) => {
+      state.pagination.currentPage = action.payload;
+    },
+    setCurrentRecipes: (state, action) => {
+      state.currentRecipes = action.payload;
+    },
   },
   extraReducers: {
     [fetchRecipes.pending]: (state) => {
@@ -43,6 +54,6 @@ export const recipeSlice = createSlice({
   },
 });
 
-export const { setSearchText,setChosenRecipe,setFilterOptions } = recipeSlice.actions;
+export const { setSearchText,setChosenRecipe,setFilterOptions,setCurrentPage,setCurrentRecipes } = recipeSlice.actions;
 
 export default recipeSlice.reducer;
