@@ -60,6 +60,9 @@ const FilterModal = () => {
             minWidth: 400,
             height: 400,
             background: "#fff",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
           }}
         >
           <h2 id="filter-modal-title">Filter</h2>
@@ -115,6 +118,8 @@ const FilterModal = () => {
             <Button
               sx={{
                 marginTop: 1,
+                color: "#eaa0a2",
+                fontWeight: 700,
               }}
               type="submit"
             >
