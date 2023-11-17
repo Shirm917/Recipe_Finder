@@ -83,6 +83,19 @@
   font-size: 5vw;
 }
 
+.empty-recipes-screen div,
+.error-screen div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  width: 90%;
+  height: 20%;
+  background-color: #eaa0a2;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+
 .filter-form {
   display: flex;
   flex-direction: column;
