@@ -22,7 +22,9 @@ const RecipeContainer = () => {
 
   return !recipes ? (
     <section className="empty-recipes-screen">
-      <h1>Search for ingredients or recipe names</h1>
+      <div>
+        <h1>Search for ingredients or recipe names</h1>
+      </div>
     </section>
   ) : (
     <>

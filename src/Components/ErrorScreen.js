@@ -1,7 +1,9 @@
-const ErrorScreen = ({error}) => {
+const ErrorScreen = ({ error }) => {
   return (
     <section className="error-screen">
-      <h1>{error}</h1>
+      <div>
+        <h1>{error}</h1>
+      </div>
     </section>
   );
 };

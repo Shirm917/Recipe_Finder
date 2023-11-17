@@ -1,7 +1,9 @@
 const EmptyRecipesScreen = () => {
   return (
     <section className="empty-recipes-screen">
-      <h1>No recipes found</h1>
+      <div>
+        <h1>No recipes found</h1>
+      </div>
     </section>
   );
 };
