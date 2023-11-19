@@ -10,7 +10,7 @@ const SelectInput = ({ value, handleFilterChange, label, menuItemArr, id, proper
   };
 
   return (
-    <Box sx={{width: 120, marginTop: 1}}>
+    <Box sx={{width: 140, marginTop: 1}}>
       <FormControl fullWidth>
         <InputLabel id={`${id}-label`}>{label}</InputLabel>
         <Select

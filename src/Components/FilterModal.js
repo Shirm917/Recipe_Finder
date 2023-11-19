@@ -6,6 +6,7 @@ import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import Button from "@mui/material/Button";
 import SelectInput from "./SelectInput";
+import TextField from "@mui/material/TextField";
 
 const FilterModal = () => {
   const [open, setOpen] = useState(false);
@@ -26,8 +27,7 @@ const FilterModal = () => {
   const handleFilterSubmit = (event) => {
     event.preventDefault();
     setOpen(false);
-    console.log(filterOptions);
-    dispatch(fetchRecipes({searchText, filterOptions}));
+    dispatch(fetchRecipes({ searchText, filterOptions }));
   };
 
   return (
@@ -67,6 +67,17 @@ const FilterModal = () => {
         >
           <h2 id="filter-modal-title">Filter</h2>
           <form className="filter-form" onSubmit={handleFilterSubmit}>
+            <TextField
+              sx={{ width: 140, marginTop: 1 }}
+              id="outlined-basic"
+              label="Max Calories"
+              variant="outlined"
+              type="number"
+              value={filterOptions.maxCalories}
+              onChange={(event) =>
+                handleFilterChange("maxCalories", event.target.value)
+              }
+            />
             <SelectInput
               value={filterOptions.diet}
               handleFilterChange={handleFilterChange}
