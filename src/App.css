@@ -51,6 +51,10 @@
   width: 45%;
 }
 
+.recipe-details-container p {
+  margin-top: -1px;
+}
+
 .cuisine-type {
   text-transform: capitalize;
 }
