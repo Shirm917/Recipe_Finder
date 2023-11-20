@@ -131,9 +131,11 @@ const FilterModal = () => {
             <Button
               sx={{
                 marginTop: 1,
-                color: "#eaa0a2",
+                color: "#000",
                 fontWeight: 700,
+                background: "#eaa0a2",
               }}
+              variant="contained"
               type="submit"
             >
               Search
