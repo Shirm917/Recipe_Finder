@@ -7,6 +7,7 @@ import Modal from "@mui/material/Modal";
 import Button from "@mui/material/Button";
 import SelectInput from "./SelectInput";
 import TextField from "@mui/material/TextField";
+import FilterAltIcon from "@mui/icons-material/FilterAlt";
 
 const FilterModal = () => {
   const [open, setOpen] = useState(false);
@@ -40,6 +41,7 @@ const FilterModal = () => {
           background: "#fff",
           margin: 1,
         }}
+        startIcon={<FilterAltIcon />}
         onClick={handleOpen}
       >
         Filter
