@@ -38,8 +38,11 @@ const FilterModal = () => {
           color: "#000",
           textAlign: "center",
           fontWeight: 900,
-          background: "#fff",
+          background: "#eaa0a2",
           margin: 1,
+          "&:hover": {
+            background: "#eaa0a2",
+          }
         }}
         startIcon={<FilterAltIcon />}
         onClick={handleOpen}
@@ -134,6 +137,9 @@ const FilterModal = () => {
                 color: "#000",
                 fontWeight: 700,
                 background: "#eaa0a2",
+                "&:hover": {
+                  background: "#eaa0a2",
+                }
               }}
               variant="contained"
               type="submit"
