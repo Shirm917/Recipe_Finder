@@ -15,16 +15,25 @@ const SearchForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    dispatch(fetchRecipes({searchText, filterOptions}));
+    dispatch(fetchRecipes({ searchText, filterOptions }));
     navigate("/");
   };
 
   return (
     <form className="search-form" onSubmit={handleSubmit}>
       <TextField
-        sx={{ width: "100%", backgroundColor: "#fff", borderRadius: "10px" }}
+        sx={{
+          width: "100%",
+          backgroundColor: "#fff",
+          borderRadius: "10px",
+          "& .MuiInputLabel-root": {
+            color: "#eaa0a2",
+            fontWeight: 900,
+            width: "75%",
+          },
+        }}
         id="outlined-basic"
-        placeholder="Enter Ingredients or Recipe Name"
+        label="Enter Ingredients or Recipe Name"
         variant="outlined"
         autoComplete="off"
         onChange={(event) => dispatch(setSearchText(event.target.value))}
