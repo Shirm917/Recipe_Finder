@@ -31,6 +31,11 @@ const SearchForm = () => {
             fontWeight: 900,
             width: "75%",
           },
+          '& .MuiInputLabel-root.Mui-focused': {
+            color: '#eaa0a2',
+            fontSize: '1.2rem',
+            fontWeight: 900,
+          },
         }}
         id="outlined-basic"
         label="Enter Ingredients or Recipe Name"
