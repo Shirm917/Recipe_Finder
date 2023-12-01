@@ -41,6 +41,7 @@ const SearchForm = () => {
         label="Enter Ingredients or Recipe Name"
         variant="outlined"
         autoComplete="off"
+        value={searchText}
         onChange={(event) => dispatch(setSearchText(event.target.value))}
         InputProps={{
           endAdornment: (
