@@ -30,6 +30,7 @@ const SearchForm = () => {
             color: "#eaa0a2",
             fontWeight: 900,
             width: "75%",
+            fontSize: "1.2rem",
           },
           '& .MuiInputLabel-root.Mui-focused': {
             color: '#eaa0a2',
