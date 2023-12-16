@@ -4,6 +4,7 @@ import LoadingScreen from "./LoadingScreen";
 import ErrorScreen from "./ErrorScreen";
 import EmptyRecipesScreen from "./EmptyRecipesScreen";
 import FilterModal from "./FilterModal";
+import RecipePagination from "./RecipePagination";
 
 const RecipeContainer = () => {
   const { recipes, isLoading, isError } = useSelector((state) => state.recipe);
@@ -34,6 +35,7 @@ const RecipeContainer = () => {
           return <RecipeCard key={recipe.recipe.uri} recipe={recipe.recipe} />;
         })}
       </section>
+      <RecipePagination />
     </>
   );
 };
