@@ -3,14 +3,12 @@ import Pagination from "@mui/material/Pagination";
 import { setCurrentRecipes, setCurrentPage } from "../redux/slices/recipeSlice";
 
 const RecipePagination = () => {
-  const { currentPage, itemsPerPage, recipes } = useSelector(
+  const { currentPage, recipes } = useSelector(
     (state) => state.recipe
   );
   const dispatch = useDispatch();
 
-  const count = Math.ceil(recipes.length / itemsPerPage);
-
-  console.log(count);
+  const itemsPerPage = 10;
 
   const getPaginationedItems = (page) => {
     const startIndex = (page - 1) * itemsPerPage;
@@ -25,9 +23,10 @@ const RecipePagination = () => {
     const currentRecipes = getPaginationedItems(newPage);
     dispatch(setCurrentRecipes(currentRecipes));
   };
+
   return (
     <Pagination
-      count={count}
+      count={Math.ceil(recipes.length / itemsPerPage)}
       page={currentPage}
       onChange={handlePageChange}
       variant="outlined"
