@@ -1,11 +1,13 @@
 import { useSelector, useDispatch } from "react-redux";
-import Pagination from "@mui/material/Pagination";
 import { setCurrentRecipes, setCurrentPage } from "../redux/slices/recipeSlice";
+import IconButton from "@mui/material/IconButton";
+import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
+import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import Typography from "@mui/material/Typography";
+import Box from '@mui/material/Box';
 
 const RecipePagination = () => {
-  const { currentPage, recipes } = useSelector(
-    (state) => state.recipe
-  );
+  const { currentPage, recipes } = useSelector((state) => state.recipe);
   const dispatch = useDispatch();
 
   const itemsPerPage = 10;
@@ -25,12 +27,15 @@ const RecipePagination = () => {
   };
 
   return (
-    <Pagination
-      count={Math.ceil(recipes.length / itemsPerPage)}
-      page={currentPage}
-      onChange={handlePageChange}
-      variant="outlined"
-    />
+    <Box sx={{display: "flex", alignItems: "center"}}>
+      <IconButton>
+        <ChevronLeftIcon />
+      </IconButton>
+      <Typography variant="body1">{currentPage}</Typography>
+      <IconButton>
+        <ChevronRightIcon />
+      </IconButton>
+    </Box>
   );
 };
 
