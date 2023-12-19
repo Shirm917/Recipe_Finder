@@ -1,5 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 import { setCurrentRecipes, setCurrentPage } from "../redux/slices/recipeSlice";
+import { fetchNextRecipes } from "../redux/thunks/fetchNextRecipes";
 import IconButton from "@mui/material/IconButton";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
@@ -23,10 +24,13 @@ const RecipePagination = () => {
 
   const handleNextPage = () => {
     const nextPage = currentPage + 1;
+    const url = recipes[currentPage - 1]._links.next.href;
     dispatch(setCurrentPage(nextPage));
     if (recipes[nextPage - 1]) {
       const currentRecipes = getPaginationedItems(nextPage);
       dispatch(setCurrentRecipes(currentRecipes));
+    } else {
+      dispatch(fetchNextRecipes(url));
     }
   };
 
