@@ -43,7 +43,8 @@ export const recipeSlice = createSlice({
     },
     [fetchRecipes.fulfilled]: (state, action) => {
       state.isLoading = false;
-      state.recipes = action.payload;
+      state.recipes = [action.payload];
+      state.currentRecipes = action.payload.hits;
     },
     [fetchRecipes.rejected]: (state, action) => {
       state.isLoading = false;

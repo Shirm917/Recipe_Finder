@@ -12,6 +12,6 @@ export const fetchRecipes = createAsyncThunk(
     if (diet) url += `&diet=${diet}`;
     const response = await fetch(url);
     const data = await response.json();
-    return data.hits;
+    return data;
   }
 );
