@@ -1,20 +1,21 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { fetchRecipes } from "../thunks/fetchRecipes";
+import { fetchNextRecipes } from "../thunks/fetchNextRecipes";
 
 const initialState = {
   searchText: "",
-  recipes: null,
+  recipes: [],
   chosenRecipe: null,
   isLoading: false,
   error: null,
+  currentPage: 1,
+  currentRecipes: [],
   filterOptions: {
     maxCalories: null,
     mealType: null,
     dishType: null,
     diet: null,
   },
-  currentPage: 1,
-  currentRecipes: [],
 };
 
 export const recipeSlice = createSlice({
@@ -47,6 +48,18 @@ export const recipeSlice = createSlice({
       state.currentRecipes = action.payload.hits;
     },
     [fetchRecipes.rejected]: (state, action) => {
+      state.isLoading = false;
+      state.error = action.error.message;
+    },
+    [fetchNextRecipes.pending]: (state) => {
+      state.isLoading = true;
+    },
+    [fetchNextRecipes.fulfilled]: (state, action) => {
+      state.isLoading = false;
+      state.recipes = [...state.recipes, action.payload];
+      state.currentRecipes = action.payload.hits;
+    },
+    [fetchNextRecipes.rejected]: (state, action) => {
       state.isLoading = false;
       state.error = action.error.message;
     },
