@@ -19,7 +19,11 @@ const RecipePagination = () => {
   const handlePrevPage = () => {
     if (currentPage === 1) return;
     const prevPage = currentPage - 1;
-    dispatch(setCurrentPage(currentPage - 1));
+    dispatch(setCurrentPage(prevPage));
+    if (recipes[prevPage - 1]) {
+      const currentRecipes = getPaginationedItems(prevPage);
+      dispatch(setCurrentRecipes(currentRecipes));
+    };
   };
 
   const handleNextPage = () => {
