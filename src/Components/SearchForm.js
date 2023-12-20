@@ -10,8 +10,7 @@ import IconButton from "@mui/material/IconButton";
 const SearchForm = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const searchText = useSelector((state) => state.recipe.searchText);
-  const filterOptions = useSelector((state) => state.recipe.filterOptions);
+  const { searchText, filterOptions } = useSelector((state) => state.recipe);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -32,9 +31,9 @@ const SearchForm = () => {
             width: "75%",
             fontSize: "1.2rem",
           },
-          '& .MuiInputLabel-root.Mui-focused': {
-            color: '#eaa0a2',
-            fontSize: '1.2rem',
+          "& .MuiInputLabel-root.Mui-focused": {
+            color: "#eaa0a2",
+            fontSize: "1.2rem",
             fontWeight: 900,
           },
         }}

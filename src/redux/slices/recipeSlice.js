@@ -46,6 +46,7 @@ export const recipeSlice = createSlice({
       state.isLoading = false;
       state.recipes = [action.payload];
       state.currentRecipes = action.payload.hits;
+      state.currentPage = 1;
     },
     [fetchRecipes.rejected]: (state, action) => {
       state.isLoading = false;
