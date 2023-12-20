@@ -17,11 +17,11 @@ const RecipeContainer = () => {
     return <ErrorScreen error={isError} />;
   }
 
-  if (recipes && recipes.length === 0) {
+  if (recipes.length === 1) {
     return <EmptyRecipesScreen />;
   }
 
-  return !recipes ? (
+  return recipes.length === 0 ? (
     <section className="empty-recipes-screen">
       <div>
         <h1>Search for ingredients or recipe names</h1>

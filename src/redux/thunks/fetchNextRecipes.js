@@ -6,7 +6,6 @@ export const fetchNextRecipes = createAsyncThunk(
     console.log(url);
     const response = await fetch(url);
     const data = await response.json();
-    console.log(data);
     return data;
   }
 );

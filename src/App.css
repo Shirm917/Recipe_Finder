@@ -83,7 +83,8 @@
   justify-content: center;
 }
 
-.empty-recipes-screen h1 {
+.empty-recipes-screen h1,
+.error-screen h1 {
   font-size: 4vw;
   font-weight: 800;
 }
