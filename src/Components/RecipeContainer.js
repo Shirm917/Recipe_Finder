@@ -7,7 +7,7 @@ import FilterModal from "./FilterModal";
 import RecipePagination from "./RecipePagination";
 
 const RecipeContainer = () => {
-  const { recipes, currentRecipes, isLoading, isError } = useSelector(
+  const { recipes, currentRecipes, isLoading, error } = useSelector(
     (state) => state.recipe
   );
 
@@ -15,8 +15,8 @@ const RecipeContainer = () => {
     return <LoadingScreen />;
   }
 
-  if (isError) {
-    return <ErrorScreen error={isError} />;
+  if (error) {
+    return <ErrorScreen error={error} />;
   }
 
   if (recipes.length === 1) {
