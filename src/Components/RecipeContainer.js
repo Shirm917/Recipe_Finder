@@ -18,7 +18,9 @@ const RecipeContainer = () => {
   }
 
   if (recipes.length === 1) {
-    return <EmptyRecipesScreen />;
+    if (recipes[0].hits.length === 0) {
+      return <EmptyRecipesScreen />;
+    }
   }
 
   return recipes.length === 0 ? (
