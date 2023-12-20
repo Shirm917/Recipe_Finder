@@ -7,7 +7,9 @@ import FilterModal from "./FilterModal";
 import RecipePagination from "./RecipePagination";
 
 const RecipeContainer = () => {
-  const { recipes, currentRecipes, isLoading, isError } = useSelector((state) => state.recipe);
+  const { recipes, currentRecipes, isLoading, isError } = useSelector(
+    (state) => state.recipe
+  );
 
   if (isLoading) {
     return <LoadingScreen />;
@@ -30,15 +32,15 @@ const RecipeContainer = () => {
       </div>
     </section>
   ) : (
-    <>
+    <section className="recipe-page">
       <FilterModal />
-      <section className="recipe-container">
+      <section className="recipe-list-container">
         {currentRecipes.map((recipe) => {
           return <RecipeCard key={recipe.recipe.uri} recipe={recipe.recipe} />;
         })}
       </section>
       <RecipePagination />
-    </>
+    </section>
   );
 };
 

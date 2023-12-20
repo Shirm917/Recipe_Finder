@@ -4,7 +4,7 @@ import "./App.css";
 
 function App() {
   return (
-    <main className="container">
+    <main className="app-container">
       <Navbar />
       <PageRoutes />
     </main>

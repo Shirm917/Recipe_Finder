@@ -39,7 +39,7 @@ const RecipePagination = () => {
   };
 
   return (
-    <Box sx={{ display: "flex", alignItems: "center" }}>
+    <Box sx={{ display: "flex", alignItems: "center", marginTop: "auto" }}>
       <IconButton onClick={handlePrevPage}>
         <ChevronLeftIcon />
       </IconButton>

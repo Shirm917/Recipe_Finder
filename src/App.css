@@ -1,4 +1,4 @@
-.container {
+.app-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,7 +13,19 @@
   font-size: 20px;
 }
 
-.recipe-container {
+.link:hover {
+  color: #d66f6f;
+}
+
+.recipe-page {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+}
+
+.recipe-list-container {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
@@ -114,19 +126,19 @@
 }
 
 @media only screen and (min-width: 600px) {
-  .recipe-container {
+  .recipe-list-container {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media only screen and (min-width: 768px) {
-  .recipe-container {
+  .recipe-list-container {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media only screen and (min-width: 992px) {
-  .recipe-container {
+  .recipe-list-container {
     grid-template-columns: repeat(4, 1fr);
   }
 }
