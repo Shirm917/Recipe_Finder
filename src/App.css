@@ -59,9 +59,13 @@
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 }
 
+.recipe-details h1 {
+  text-align: center;
+}
+
 .recipe-details img {
-  height: 40%;
-  width: 45%;
+  height: 35%;
+  width: auto;
 }
 
 .recipe-details-container p {
@@ -102,7 +106,7 @@
 
 .empty-recipes-screen h1,
 .error-screen h1 {
-  font-size: 4vw;
+  font-size: 6vw;
   font-weight: 800;
 }
 
