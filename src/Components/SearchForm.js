@@ -29,21 +29,20 @@ const SearchForm = () => {
             color: "#eaa0a2",
             fontWeight: 900,
             width: "75%",
-            fontSize: "1.2rem",
           },
           "& .MuiInputLabel-root.Mui-focused": {
             color: "#eaa0a2",
-            fontSize: "1.2rem",
             fontWeight: 900,
           },
         }}
-        id="outlined-basic"
+        id="filled-basic"
         label="Enter Ingredients or Recipe Name"
-        variant="outlined"
+        variant="filled"
         autoComplete="off"
         value={searchText}
         onChange={(event) => dispatch(setSearchText(event.target.value))}
         InputProps={{
+          disableUnderline: true,
           endAdornment: (
             <InputAdornment position="end">
               <IconButton type="submit">
