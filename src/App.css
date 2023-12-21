@@ -11,6 +11,7 @@
   text-decoration: none;
   color: #eaa0a2;
   font-size: 20px;
+  cursor: pointer;
 }
 
 .link:hover {
@@ -73,6 +74,10 @@
 
 .ingredient-lines-container {
   overflow: auto;
+}
+
+.ingredient-lines-container ul {
+  margin-right: 2px
 }
 
 .ingredient-lines-container::-webkit-scrollbar {
