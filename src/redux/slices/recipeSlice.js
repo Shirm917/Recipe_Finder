@@ -47,6 +47,13 @@ export const recipeSlice = createSlice({
       state.recipes = [action.payload];
       state.currentRecipes = action.payload.hits;
       state.currentPage = 1;
+      state.chosenRecipe = null;
+      state.filterOptions = {
+        maxCalories: null,
+        mealType: null,
+        dishType: null,
+        diet: null,
+      };
     },
     [fetchRecipes.rejected]: (state, action) => {
       state.isLoading = false;
