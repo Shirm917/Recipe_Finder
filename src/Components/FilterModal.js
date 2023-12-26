@@ -78,6 +78,7 @@ const FilterModal = () => {
               label="Max Calories"
               variant="outlined"
               type="number"
+              autoComplete="off"
               value={filterOptions.maxCalories}
               onChange={(event) =>
                 handleFilterChange("maxCalories", event.target.value)
