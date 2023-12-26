@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setChosenRecipe } from "../redux/slices/recipeSlice";
 import Card from "@mui/material/Card";
@@ -11,9 +11,11 @@ import Typography from "@mui/material/Typography";
 const RecipeCard = ({ recipe }) => {
   const { image, label } = recipe;
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleRecipeClick = () => {
     dispatch(setChosenRecipe(recipe));
+    navigate("/recipeDetails");
   };
 
   return (
@@ -31,16 +33,19 @@ const RecipeCard = ({ recipe }) => {
         title={label}
       />
       <CardContent>
-        <Typography sx={{textTransform: "capitalize"}} gutterBottom variant="h5" component="div">
+        <Typography
+          sx={{ textTransform: "capitalize" }}
+          gutterBottom
+          variant="h5"
+          component="div"
+        >
           {label}
         </Typography>
       </CardContent>
       <CardActions>
-        <Link to="recipeDetails">
-          <Button size="small" onClick={handleRecipeClick}>
-            Click to see recipe
-          </Button>
-        </Link>
+        <Button size="small" onClick={handleRecipeClick}>
+          Click to see recipe
+        </Button>
       </CardActions>
     </Card>
   );
