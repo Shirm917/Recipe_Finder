@@ -12,13 +12,13 @@ const RecipePagination = () => {
   const { currentPage, recipes } = useSelector((state) => state.recipe);
   const dispatch = useDispatch();
 
+  const backArrowDisabled = currentPage === 1;
+  const forwardArrowDisabled = currentPage === Math.ceil(recipes[0].count / 20);
+
   const getPaginationedItems = (page) => {
     const currentRecipes = recipes[page - 1].hits;
     return currentRecipes;
   };
-
-  const backArrowDisabled = currentPage === 1;
-  const forwardArrowDisabled = currentPage === Math.ceil(recipes[0].count / 20);
 
   const handlePrevPage = () => {
     if (currentPage === 1) return;
