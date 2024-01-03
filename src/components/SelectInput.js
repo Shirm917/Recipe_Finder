@@ -4,13 +4,20 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
 
-const SelectInput = ({ value, handleFilterChange, label, menuItemArr, id, propertyKey }) => {
+const SelectInput = ({
+  value,
+  handleFilterChange,
+  label,
+  menuItemArr,
+  id,
+  propertyKey,
+}) => {
   const handleChange = (event) => {
     handleFilterChange(propertyKey, event.target.value);
   };
 
   return (
-    <Box sx={{width: 140, marginTop: 1}}>
+    <Box sx={{ width: 140, marginTop: 1 }}>
       <FormControl fullWidth>
         <InputLabel id={`${id}-label`}>{label}</InputLabel>
         <Select

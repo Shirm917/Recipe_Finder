@@ -42,7 +42,7 @@ const FilterModal = () => {
           margin: 1,
           "&:hover": {
             background: "#eaa0a2",
-          }
+          },
         }}
         startIcon={<FilterAltIcon />}
         onClick={handleOpen}
@@ -140,7 +140,7 @@ const FilterModal = () => {
                 background: "#eaa0a2",
                 "&:hover": {
                   background: "#eaa0a2",
-                }
+                },
               }}
               variant="contained"
               type="submit"
