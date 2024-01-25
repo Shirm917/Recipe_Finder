@@ -16,7 +16,7 @@ const RecipeContainer = () => {
   }
 
   if (error) {
-    return <ErrorScreen error={error} />;
+    return <ErrorScreen errorText={error} />;
   }
 
   if (recipes.length === 1) {
